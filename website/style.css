@@ -12,8 +12,6 @@ div.feel, div.zip{
 
 #app{
     display: grid;
-    /* grid-auto-rows: minmax(100px, auto); */
-    /* grid-template-columns:  */
     height:100vh;
     background: #f23557;
     color: #f0d43a;
@@ -23,10 +21,6 @@ div.feel, div.zip{
     font-family: 'Oswald', sans-serif;
 }
 
-.holder{
-
-}
-
 div.entry{
     display: block;
     background-color: #3b4a6b;
@@ -34,7 +28,6 @@ div.entry{
 
 #entryHolder{
     background-color: #f0d43a;
-    /* color: #3b4a6b; */
     color: #f23557;
     margin: 2em 4em;
     justify-content: center;
@@ -43,27 +36,11 @@ div.entry{
     font-weight: 700;
 }
 
-#date{
-
-}
-
-#temp{
-
-}
-
-#content{
-
-}
-
 .headline {
     background-color: #3b4a6b;
 }
 h1{
     text-align: center;
-}
-.title{
-
-}
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
@@ -79,12 +56,11 @@ input{
 textarea, input{
     
     background: rgba(255, 255, 255, .7);
-    /* background:rgba(68, 68, 68, .5); */
-    /* color: #f0d43a; */
     color: #3b4a6b;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
+    text-align: center;
 }
 
 button{
@@ -102,12 +78,6 @@ h1{
     font-size: 36px;
 }
 
-/* {
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-} */
 /* Reset style for HTML element on active to have no border*/
 input:focus,
 select:focus,
