@@ -6,7 +6,10 @@ const   express     = require('express'),
 
 
 // Setup empty JS object to act as endpoint for all routes
-let projectData = {};
+let projectData = {
+  name: 'sami',
+  age: '20'
+};
 
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.
@@ -22,18 +25,19 @@ app.use(express.static('website'));
 app.get('/all', sendData);
 
 function sendData (req, res) {
-  res.send(projectData);
+  res.send(data);
+  data=[]
 };
 
 // POST data
-const data = [];
+let data = [];
 
-app.get('/add', addData);
+app.post('/add', addData);
 
 function addData (req, res){
   let {date, temp, content} = req.body;
     data.push(req.body);
-    console.log(data);
+    return data;
 };
 
 

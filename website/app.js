@@ -20,12 +20,12 @@ function performAction(event) {
       // POST data
       postData('/add', { date: newDate, temp: userInfo.main.temp, content })
     })
-    // .then(function (newData) {
-    //   // call updateUI to update browser content
-    //   updateUI()
-    // })
+    .then(function (newData) {
+      // call updateUI to update browser content
+      updateUI()
+    })
   // reset form
-  // form.reset();
+  
 }
 
 /* Function to GET Web API Data*/
@@ -62,15 +62,16 @@ const postData = async (url = '', data = {}) => {
 
 
 const updateUI = async () => {
-  const request = await fetch('/add');
+  const request = await fetch('/all');
   try {
-    const allData = await request.json()
-    // show icons on the page
-    // icons.forEach(icon => icon.style.opacity = '1');
-    // update new entry values
-    document.getElementById('date').innerHTML = allData.date;
-    document.getElementById('temp').innerHTML = allData.temp;
-    document.getElementById('content').innerHTML = allData.content;
+    let allData = await request.json()
+    // update HTML
+    document.getElementById('date').innerHTML = `Date: ${allData[0].date}`;
+    document.getElementById('temp').innerHTML = `Recent Temprature is: ${allData[0].temp}`;
+    document.getElementById('content').innerHTML = `And you Feel ${allData[0].content}`;
+    allData =[];
+    document.getElementById('zip').value = " ";
+    document.getElementById('feelings').value = " ";
   }
   catch (error) {
     console.log("error", error);
