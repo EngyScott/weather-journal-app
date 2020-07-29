@@ -30,16 +30,20 @@ function performAction(event) {
 
 /* Fetch openweathermap data with user credintials */
 const getWeather = async (baseURL, cityZip, apiKey) => {
-  // assig res to the fetched data
-  const res = await fetch(baseURL+cityZip+apiKey);
-  try {
-    // assign processed fetched data to userInfo
-    const userInfo = await res.json();
-    // return user info
-    return userInfo;
-    // Catch errors
-  } catch (error) {
-    console.log("error", error);
+  if(cityZip){
+    // assig res to the fetched data
+    const res = await fetch(baseURL+cityZip+apiKey);
+    try {
+      // assign processed fetched data to userInfo
+      const userInfo = await res.json();
+      // return user info
+      return userInfo;
+      // Catch errors
+    } catch (error) {
+      console.log("error", error);
+    }
+  }else{
+    return alert('Please Enter City Zip Code')
   }
 }
 
